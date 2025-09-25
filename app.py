@@ -9,8 +9,8 @@ def home():
     mensaje += "<li><h2>resta http://127.0.0.1:5000/resta/10/20</h2></li>"
     mensaje += "<li><h2>multiplicacion http://127.0.0.1:5000/multiplicacion/10/20</h2></li>"
     mensaje += "<li><h2>division http://127.0.0.1:5000/division/10/20</h2></li>"
-    mensaje += "<li><h2>minimo http://127.0.0.1:5000/minimo/10/20</h2></li>"
-    mensaje += "<li><h2>maximo http://127.0.0.1:5000/maximo/10/20</h2></li>"    
+    mensaje += "<li><h2>minimo http://127.0.0.1:5000/min/10/20</h2></li>"
+    mensaje += "<li><h2>maximo http://127.0.0.1:5000/max/10/20</h2></li>"
     mensaje += "</ul>"
     return mensaje
 
@@ -26,19 +26,27 @@ def restar(v1, v2):
 
 @app.route("/multiplicacion/<v1>/<v2>")
 def multi(v1, v2):
-    return
+    s = float(v1) *  float(v2)
+    return "<h1> La multiplicacion de " + str(v1) + " y " + str(v2) + " es " + str(s) + "</h1>"
 
 @app.route("/division/<v1>/<v2>")
 def div(v1, v2):
-    return
+    s = float(v1) / float(v2)
+    return "<h1> La division de " + str(v1) + " y " + str(v2) + " es " + str(s) + "</h1>"
 
-@app.route("/minimo/<v1>/<v2>")
+@app.route("/max/<v1>/<v2>")
 def min(v1, v2):
-    return
+    if v1 > v2:
+        return "<h1> El numero mas alto es" + v1 + "</h1>" 
+    else:
+            return "<h1> El numero mas alto es" + v2 + "</h1>" 
 
-@app.route("/maximo/<v1>/<v2>")
-def max(v1, v2):
-    return
+@app.route("/min/<v1>/<v2>")
+def min(v1, v2):
+    if v2 < v1:
+        return "<h1> El numero mas bajo es" + v1 + "</h1>" 
+    else:
+            return "<h1> El numero mas bajo es" + v2 + "</h1>"
 
 if __name__ == '__main__':
     app.run(debug=True)
