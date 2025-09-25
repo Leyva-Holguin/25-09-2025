@@ -1,3 +1,1 @@
-PS D:\flask> python -m venv entornov
-PS D:\flask> entornov\Scripts\activate
-(entornov) PS D:\flask> pip install flask
+desarrollar una aplicacion web que me permita sumar, restar, dividir y multiplicar ademas de obtener el numero maximo y el numero minimo de n valores.
