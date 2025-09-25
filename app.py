@@ -35,7 +35,7 @@ def div(v1, v2):
     return "<h1> La division de " + str(v1) + " y " + str(v2) + " es " + str(s) + "</h1>"
 
 @app.route("/max/<v1>/<v2>")
-def min(v1, v2):
+def max(v1, v2):
     if v1 > v2:
         return "<h1> El numero mas alto es" + v1 + "</h1>" 
     else:
