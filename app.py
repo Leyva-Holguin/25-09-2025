@@ -43,7 +43,7 @@ def max(v1, v2):
 
 @app.route("/min/<v1>/<v2>")
 def min(v1, v2):
-    if v2 < v1:
+    if v1 < v2:
         return "<h1> El numero mas bajo es" + v1 + "</h1>" 
     else:
             return "<h1> El numero mas bajo es" + v2 + "</h1>"
